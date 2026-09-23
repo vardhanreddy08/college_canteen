@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVCE Tirupati Canteen</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🍴 <span>SVCE</span> Canteen
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#location">Location</a>
+    </nav>
+
+    <button class="cart-btn" onclick="openCart()">
+        🛒 Cart
+        <span id="cartCount">0</span>
+    </button>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="small-title">SRI VENKATESWARA COLLEGE OF ENGINEERING</p>
+
+        <h1>
+            Welcome to
+            <span>SVCE Canteen</span>
+        </h1>
+
+        <p>
+            Fresh • Affordable • Delicious
+            <br>
+            Your campus food destination in Tirupati.
+        </p>
+
+        <button class="explore-btn"
+                onclick="document.getElementById('menu').scrollIntoView()">
+            Explore Menu 🍽️
+        </button>
+
+    </div>
+
+    <div class="hero-card">
+
+        <div class="plate">
+            🍛
+        </div>
+
+        <h3>Today's Special</h3>
+
+        <p>South Indian Meals</p>
+
+        <strong>₹80</strong>
+
+    </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu-section" id="menu">
+
+    <div class="section-heading">
+
+        <p>OUR MENU</p>
+
+        <h2>Choose Your Favorite Food</h2>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search food..."
+            onkeyup="searchFood()"
+        >
+
+        🔍
+
+    </div>
+
+
+    <!-- CATEGORY BUTTONS -->
+
+    <div class="categories">
+
+        <button onclick="filterMenu('all')">All</button>
+
+        <button onclick="filterMenu('tiffins')">
+            🥞 Tiffins
+        </button>
+
+        <button onclick="filterMenu('lunch')">
+            🍛 Lunch
+        </button>
+
+        <button onclick="filterMenu('cooldrinks')">
+            🥤 Cool Drinks
+        </button>
+
+        <button onclick="filterMenu('snacks')">
+            🍟 Snacks
+        </button>
+
+        <button onclick="filterMenu('fastfood')">
+            🍕 Fast Food
+        </button>
+
+    </div>
+
+
+    <!-- FOOD ITEMS -->
+
+    <div id="foodContainer" class="food-container"></div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div>
+
+        <p class="small-title">
+            ABOUT OUR CANTEEN
+        </p>
+
+        <h2>
+            More Than Just Food
+        </h2>
+
+        <p>
+            SVCE Canteen provides affordable and delicious food
+            for students, faculty and staff. Our menu includes
+            traditional South Indian dishes, snacks, beverages
+            and fast food.
+        </p>
+
+    </div>
+
+    <div class="stats">
+
+        <div>
+            <strong>50+</strong>
+            <span>Food Items</span>
+        </div>
+
+        <div>
+            <strong>₹20+</strong>
+            <span>Affordable Prices</span>
+        </div>
+
+        <div>
+            <strong>20</strong>
+            <span>Max Quantity</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="location" id="location">
+
+    <div>
+
+        <p class="small-title">
+            FIND US
+        </p>
+
+        <h2>SVCE Tirupati</h2>
+
+        <p>
+            Sri Venkateswara College of Engineering
+            <br>
+            Tirupati, Andhra Pradesh
+            <br>
+            India
+        </p>
+
+        <button
+            onclick="openLocation()"
+            class="location-btn">
+
+            📍 Open Location
+
+        </button>
+
+    </div>
+
+    <div class="map-card">
+
+        <div class="map-pin">
+            📍
+        </div>
+
+        <h3>SVCE Canteen</h3>
+
+        <p>Tirupati, Andhra Pradesh</p>
+
+    </div>
+
+</section>
+
+
+<!-- CART -->
+
+<div id="cartOverlay" class="cart-overlay">
+
+    <div class="cart">
+
+        <div class="cart-header">
+
+            <h2>🛒 Your Cart</h2>
+
+            <button onclick="closeCart()">✕</button>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-footer">
+
+            <h3>
+                Total:
+                ₹<span id="cartTotal">0</span>
+            </h3>
+
+            <button
+                onclick="placeOrder()"
+                class="order-btn">
+
+                Place Order
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+    Added to cart!
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 SVCE Canteen | Tirupati
+    </p>
+
+    <p>
+        Designed for College Canteen Management
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
